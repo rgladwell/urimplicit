@@ -1,4 +1,4 @@
-Urimplicit
+Urimplicit [![Build Status](https://travis-ci.org/rgladwell/urimplicit.svg)](https://travis-ci.org/rgladwell/urimplicit)
 ==========
 
 **Urimplicit** is a really simple Scala library that provides useful, implicit augmentations for the Java
