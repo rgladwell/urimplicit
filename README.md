@@ -4,6 +4,12 @@ Urimplicit [![Build Status](https://travis-ci.org/rgladwell/urimplicit.svg)](htt
 **Urimplicit** is a really simple Scala library that provides useful, implicit augmentations for the Java
 [URI class](https://docs.oracle.com/javase/8/docs/api/java/net/URI.html).
 
+To install add the following line to your SBT configuration:
+
+```
+libraryDependencies += "me.gladwell.urimplicit" %% "urimplicit" % "0.1"
+```
+
 To enable simply import the library into scope:
 
 ```scala
@@ -63,3 +69,21 @@ isAddress: (address: String)Option[String]
 scala> host(URI("http://localhost:8080"))
 res2: Option[String] = Some(localhost)
 ```
+
+## License
+
+This program is free software: you can redistribute it and/or modify#
+it under the terms of the GNU Lesser General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this program.  If not, see
+<http://www.gnu.org/licenses/>.
+
+Copyright 2015 [Ricardo Gladwell](http://gladwell.me).
