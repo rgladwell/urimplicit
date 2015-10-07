@@ -4,6 +4,12 @@ Urimplicit [![Build Status](https://travis-ci.org/rgladwell/urimplicit.svg)](htt
 **Urimplicit** is a really simple Scala library that provides useful, implicit augmentations for the Java
 [URI class](https://docs.oracle.com/javase/8/docs/api/java/net/URI.html).
 
+To install add the following line to your SBT configuration:
+
+```
+libraryDependencies += "me.gladwell" %% "urimplicit" % "0.1"
+```
+
 To enable simply import the library into scope:
 
 ```scala
