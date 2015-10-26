@@ -15,16 +15,22 @@ case class Uri(uri: URI) {
 
 object Uri {
 
-  def unapply(uri: String) = {
+  def unapply(uri: String): Option[(String, String)] = {
     try {
-      Option(new URI(uri).getHost)
+      val javaUri = new URI(uri)
+
+      javaUri.getHost match {
+        case host: String => Some((uri, host))
+        case _            => None
+      }
+      
     } catch {
       case e : URISyntaxException => None
     }
   }
 
-  def unapply(uri: URI) = {
-    Option(uri.getHost)
+  def unapply(uri: URI): Option[(String, String)] = {
+    Some((uri.toString(), uri.getHost))
   }
 
 }

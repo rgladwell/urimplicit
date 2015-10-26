@@ -7,7 +7,7 @@ Urimplicit [![Build Status](https://travis-ci.org/rgladwell/urimplicit.svg)](htt
 To install add the following line to your SBT configuration:
 
 ```
-libraryDependencies += "me.gladwell.urimplicit" %% "urimplicit" % "0.1"
+libraryDependencies += "me.gladwell" %% "urimplicit" % "0.1"
 ```
 
 To enable simply import the library into scope:
@@ -43,10 +43,10 @@ This library also provides the `Uri` object which can be used in pattern matchin
 
 ```scala
 scala> def isAddress(address: String): Boolean =
-     |   address match {
-     |     case Uri(_)  => true
-     |     case _       => false
-     |   }
+     address match {
+     case Uri(_,_)  => true
+     case _         => false
+     }
 isAddress: (address: String)Boolean
 
 scala> isAddress("http://localhost:8080")
@@ -60,11 +60,11 @@ You can also use the pattern matcher to extract host information from a URI:
 
 ```scala
 scala> def host(address: URI): Option[String] =
-     |   address match {
-     |     case Uri(host)  => Some(host)
-     |     case _          => None
-     |   }
-isAddress: (address: String)Option[String]
+     address match {
+     case Uri(_, host)  => Some(host)
+     case _             => None
+}
+host: (address: String)Option[String]
 
 scala> host(URI("http://localhost:8080"))
 res2: Option[String] = Some(localhost)

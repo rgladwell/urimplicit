@@ -11,7 +11,11 @@ object UriSpec extends Specification {
   "A URI" should {
 
     "match an address" in {
-      "http://example.org" must beLike { case Uri(host) => host must_== "example.org" }
+      "http://example.org" must beLike { case Uri(_, host) => host must_== "example.org" }
+    }
+
+    "not match malformed addresses" in {
+      Uri.unapply("http://%example.org") must beNone
     }
 
     "not match a host" in {
@@ -23,7 +27,11 @@ object UriSpec extends Specification {
     }
 
     "match an URI" in {
-      new URI("http://example.org") must beLike { case Uri(host) => host must_== "example.org" }
+      new URI("http://example.org") must beLike { case Uri(uri, _) => uri must_== "http://example.org" }
+    }
+
+    "match an URI host" in {
+      new URI("http://example.org") must beLike { case Uri(_, host) => host must_== "example.org" }
     }
 
     "correctly concatenate with a relative URI" in {
