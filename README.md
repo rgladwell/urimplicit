@@ -1,4 +1,4 @@
-Urimplicit [![Build Status](https://travis-ci.org/rgladwell/urimplicit.svg)](https://travis-ci.org/rgladwell/urimplicit) [![Codacy Badge](https://api.codacy.com/project/badge/b4ad1f71b3314c448d93590c669728a1)](https://www.codacy.com/app/ricardo_3/urimplicit) [ ![Download](https://api.bintray.com/packages/rgladwell/maven/urimplicit/images/download.svg) ](https://bintray.com/rgladwell/maven/urimplicit/_latestVersion)
+Urimplicit [![Build Status](https://travis-ci.org/rgladwell/urimplicit.svg)](https://travis-ci.org/rgladwell/urimplicit) [![Codacy Badge](https://api.codacy.com/project/badge/b4ad1f71b3314c448d93590c669728a1)](https://www.codacy.com/app/ricardo_3/urimplicit) [ ![Download](https://api.bintray.com/packages/rgladwell/maven/urimplicit/images/download.svg) ](https://bintray.com/rgladwell/maven/urimplicit/_latestVersion) [![Dependencies](https://app.updateimpact.com/badge/702556651743481856/urimplicit.svg?config=compile)](https://app.updateimpact.com/latest/702556651743481856/urimplicit)
 ==========
 
 **Urimplicit** is a really simple Scala library that provides useful, implicit augmentations for the Java
