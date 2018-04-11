@@ -1,6 +1,6 @@
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.12"
 
-crossScalaVersions := Seq("2.10.4", "2.11.8")
+crossScalaVersions := Seq("2.11.12", "2.12.5")
 
 organization := "me.gladwell.urimplicit"
 
@@ -25,7 +25,7 @@ scalacOptions ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2-core" % "3.6.5" % "test"
+  "org.specs2" %% "specs2-core" % "4.0.2" % "test"
 )
 
 pomExtra := (

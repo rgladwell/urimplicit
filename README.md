@@ -7,7 +7,7 @@ Urimplicit [![Build Status](https://travis-ci.org/rgladwell/urimplicit.svg)](htt
 To install add the following line to your SBT configuration:
 
 ```
-libraryDependencies += "me.gladwell" %% "urimplicit" % "0.2"
+libraryDependencies += "me.gladwell" %% "urimplicit" % "0.2.2"
 ```
 
 To enable simply import the library into scope:
