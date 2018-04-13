@@ -4,7 +4,7 @@
 
 package urimplicit
 
-import java.net.URISyntaxException
+import scala.util.Try
 
 case class Uri(uri: URI) {
 
@@ -15,19 +15,13 @@ case class Uri(uri: URI) {
 
 object Uri {
 
-  def unapply(uri: String): Option[(String, String)] = {
-    try {
-      val javaUri = new URI(uri)
-
-      javaUri.getHost match {
-        case host: String => Some((uri, host))
-        case _            => None
-      }
-      
-    } catch {
-      case e : URISyntaxException => None
+  def unapply(uri: String): Option[(String, String)] =
+    for {
+      javaUri <- Try{ new URI(uri) }.toOption
+      host <- Option(javaUri.getHost)
+    } yield {
+      (uri, javaUri.getHost)
     }
-  }
 
   def unapply(uri: URI): Option[(String, String)] = {
     Some((uri.toString(), uri.getHost))
