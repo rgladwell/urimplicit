@@ -6,32 +6,32 @@ package urimplicit
 
 import org.specs2.mutable.Specification
 
-object UriSpec extends Specification {
+object URISpec extends Specification {
 
   "A URI" should {
 
     "match an address" in {
-      "http://example.org" must beLike { case Uri(_, host) => host must_== "example.org" }
+      "http://example.org" must beLike { case URI(_, host) => host must_== "example.org" }
     }
 
     "not match malformed addresses" in {
-      Uri.unapply("http://%example.org") must beNone
+      URI.unapply("http://%example.org") must beNone
     }
 
     "not match a host" in {
-      Uri.unapply("example.org") must beNone
+      URI.unapply("example.org") must beNone
     }
 
     "not match an IP address" in {
-      Uri.unapply("192.173.55.87") must beNone
+      URI.unapply("192.173.55.87") must beNone
     }
 
     "match an URI" in {
-      new URI("http://example.org") must beLike { case Uri(uri, _) => uri must_== "http://example.org" }
+      new URI("http://example.org") must beLike { case URI(uri, _) => uri must_== "http://example.org" }
     }
 
     "match an URI host" in {
-      new URI("http://example.org") must beLike { case Uri(_, host) => host must_== "example.org" }
+      new URI("http://example.org") must beLike { case URI(_, host) => host must_== "example.org" }
     }
 
     "correctly concatenate with a relative URI" in {

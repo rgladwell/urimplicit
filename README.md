@@ -44,7 +44,7 @@ This library also provides the `Uri` object which can be used in pattern matchin
 ```scala
 scala> def isAddress(address: String): Boolean =
      address match {
-     case Uri(_,_)  => true
+     case URI(_,_)  => true
      case _         => false
      }
 isAddress: (address: String)Boolean
@@ -61,7 +61,7 @@ You can also use the pattern matcher to extract host information from a URI:
 ```scala
 scala> def host(address: URI): Option[String] =
      address match {
-     case Uri(_, host)  => Some(host)
+     case URI(_, host)  => Some(host)
      case _             => None
 }
 host: (address: String)Option[String]

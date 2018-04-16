@@ -3,15 +3,28 @@
 // See the README.md file for more information.
 
 import scala.language.implicitConversions
+import scala.util.Try
 
 package object urimplicit {
 
   type URI = java.net.URI
 
-  implicit def javaUriToUri(uri: URI) = Uri(uri)
+  implicit def javaUriToUriOps(uri: URI) = URIOps(uri)
 
   object URI {
     def apply(uri: String) = new URI(uri)
+
+    def unapply(uri: String): Option[(String, String)] =
+      for {
+        javaUri <- Try{ new URI(uri) }.toOption
+        host <- Option(javaUri.getHost)
+      } yield {
+        (uri, javaUri.getHost)
+      }
+  
+    def unapply(uri: URI): Option[(String, String)] = {
+      Some((uri.toString(), uri.getHost))
+    }
   }
 
 }
