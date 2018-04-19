@@ -9,7 +9,7 @@ package object urimplicit {
 
   type URI = java.net.URI
 
-  implicit def javaUriToUriOps(uri: URI) = URIOps(uri)
+  implicit def javaUriToUriOps(uri: URI) = new URIOps(uri)
 
   object URI {
     def apply(uri: String) = new URI(uri)
@@ -21,7 +21,7 @@ package object urimplicit {
       } yield {
         (uri, javaUri.getHost)
       }
-  
+
     def unapply(uri: URI): Option[(String, String)] = {
       Some((uri.toString(), uri.getHost))
     }

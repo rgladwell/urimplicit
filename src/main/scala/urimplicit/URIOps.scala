@@ -4,9 +4,7 @@
 
 package urimplicit
 
-import scala.util.Try
-
-case class URIOps(uri: URI) {
+class URIOps(private val uri: URI) {
 
   def + (uri2: URI): URI = uri.resolve(uri2)
   def + (uri2: String): URI = this + new URI(uri2)
