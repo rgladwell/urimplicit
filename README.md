@@ -7,7 +7,7 @@ Urimplicit [![Build Status](https://travis-ci.org/rgladwell/urimplicit.svg)](htt
 To install add the following line to your SBT configuration:
 
 ```
-libraryDependencies += "me.gladwell" %% "urimplicit" % "0.2.2"
+libraryDependencies += "me.gladwell" %% "urimplicit" % "0.3.0"
 ```
 
 To enable simply import the library into scope:
@@ -86,4 +86,4 @@ You should have received a copy of the GNU Lesser General Public
 License along with this program.  If not, see
 <http://www.gnu.org/licenses/>.
 
-Copyright 2015-2018 [Ricardo Gladwell](http://gladwell.me).
+Copyright 2015-2020 [Ricardo Gladwell](http://gladwell.me).

@@ -1,6 +1,6 @@
-scalaVersion := "2.11.12"
+scalaVersion := "2.13.1"
 
-crossScalaVersions := Seq("2.11.12", "2.12.5")
+crossScalaVersions := Seq("2.11.12", "2.12.5", "2.13.1")
 
 organization := "me.gladwell.urimplicit"
 
@@ -11,21 +11,19 @@ licenses := Seq("LGPL-3.0" -> url("http://www.gnu.org/licenses/lgpl-3.0.html"))
 homepage := Some(url("https://github.com/rgladwell/urimplicit"))
 
 scalacOptions ++= Seq(
-  "-target:jvm-1.7",
+  "-target:jvm-1.8",
   "-encoding", "UTF-8",
   "-deprecation",
   "-feature",
   "-unchecked",
   "-Xlint",
-  "-Ywarn-adapted-args",
   "-Ywarn-value-discard",
-  "-Ywarn-inaccessible",
   "-Ywarn-dead-code",
   "-Yrangepos"
 )
 
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2-core" % "4.0.2" % "test"
+  "org.specs2" %% "specs2-core" % "4.6.0" % "test"
 )
 
 pomExtra := (
