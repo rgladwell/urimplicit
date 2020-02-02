@@ -70,6 +70,17 @@ scala> host(URI("http://localhost:8080"))
 res2: Option[String] = Some(localhost)
 ```
 
+## Release
+
+This project can be released as follows:
+
+```sh
+$ sbt
+sbt:urimplicit> bintrayChangeCredentials
+
+sbt:urimplicit> + publish
+```
+
 ## License
 
 This program is free software: you can redistribute it and/or modify#
